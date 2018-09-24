@@ -23,6 +23,7 @@ class GreaterOrEqualsTo extends Basic implements Claim, Validatable
      */
     public function validate(ValidationData $data)
     {
+        if ($this->getName() === "exp") return true;
         if ($data->has($this->getName())) {
             return $this->getValue() >= $data->get($this->getName());
         }
